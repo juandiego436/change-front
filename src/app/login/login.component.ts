@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   isLoginFail = false;
   login?:Login;
   result:any;
-  password?: string='12345678';
-  email?:string = 'juandiego1201@gmail.com';
+  password?: string;
+  email?:string;
   roles: string[] = [];
 
   constructor(private service: OrigenService,
