@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="container-fluid">
+    <h1 class="text-center my-5">Lista de Personas </h1>
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-primary mb-3" href="persona/crea">Registrar</a>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Fecha Nacimiento</th>
+            <th>Roles</th>
+            <th>Opciones</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let per of result">
+              <td>{{per.id}}</td>
+              <td>{{per.nombre}}</td>
+              <td>{{per.email}}</td>
+              <td>{{per.fechaNacimiento}}</td>
+              <td *ngFor="let rol of per.roles">{{rol.rolNombre}}</td>
+              <td>
+                <a class="mx-3" href="persona/actualizar/{{per.id}}">Actualizar</a>
+                <a class="mx-3" (click)="deleted(per.id)">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

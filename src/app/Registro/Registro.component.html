@@ -1,0 +1,49 @@
+
+<div class="container">
+  <div class="container-fluid">
+    <h1 class="text-center my-3">{{nombre != null ? 'Actualizar' :  'Registro'}} de Persona</h1>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/persona">Regresar</a>
+      </li>
+    </ul>
+    <form (ngSubmit)="OnSubmit()">
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su nombre por favor" required>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="apellido" class="form-label">email</label>
+          <input type="text" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su email por favor" required>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="apellido" class="form-label">password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su password por favor" required>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" [(ngModel)]="fechaNacimiento" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su fecha de nacimiento" required>
+        </div>
+        <div class="col-sm-6">
+          <label for="fechaNacimiento" class="form-label">Rol</label>
+          <select class="form-control" [(ngModel)]="rol" [ngModelOptions]="{standalone: true}">
+            <option selected>Selecciona Rol</option>
+            <option *ngFor="let rol of rols" [value]="rol.rolNombre">{{rol.rolNombre}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="w-100 btn btn-primary btn-lg my-3" type="submit">Guardar</button>
+        </div>
+        <div class="col">
+          <button class="w-100 btn btn-secondary btn-lg my-3" type="reset">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
