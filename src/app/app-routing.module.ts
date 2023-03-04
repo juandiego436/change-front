@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'home', component: DashbardComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path: 'persona', component: PersonaComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path: 'persona/actualizar/:id', component : RegistroComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({

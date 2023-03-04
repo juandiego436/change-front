@@ -48,6 +48,7 @@ export class AuthService {
 
   public logOut(): void {
     window.sessionStorage.clear();
+    window.location.reload();
   }
 }
 
