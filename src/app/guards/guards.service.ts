@@ -14,7 +14,6 @@ export class GuardsService implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
       const expectedRol = route.data['expectedRol'];
-      console.log(expectedRol);
       const roles = this.tokenService.getAuthorities();
       this.realRol = 'user';
       roles.forEach(rol => {

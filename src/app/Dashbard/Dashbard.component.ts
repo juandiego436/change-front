@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { OrigenService } from '../servicio/origen.service';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-Dashbard',
@@ -11,8 +10,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 export class DashbardComponent implements OnInit {
 
-  isLogged = false;
-  nombreUsuario = '';
+  isLogged = this.service.getUserName() ? true : false;
+  nombreUsuario = this.service.getUserName();
   result:any;
   constructor(private service : AuthService, private origen : OrigenService, private router: Router) { }
 
